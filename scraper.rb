@@ -13,7 +13,7 @@
 # p page.at('div.content')
 #
 # # Write out to the sqlite database using scraperwiki library
-# ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
+ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
 #
 # # An arbitrary query against the database
 # ScraperWiki.select("* from data where 'name'='peter'")
@@ -22,3 +22,5 @@
 # on Morph for Ruby (https://github.com/openaustralia/morph-docker-ruby/blob/master/Gemfile) and all that matters
 # is that your final data is written to an Sqlite database called data.sqlite in the current working directory which
 # has at least a table called data.
+
+puts 'Hola mundo';
