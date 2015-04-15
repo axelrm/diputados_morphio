@@ -7,16 +7,23 @@ require 'mechanize'
 agent = Mechanize.new
 #
 # # Read in a page
-page = agent.get("http://www.congreso.es/portal/page/portal/Congreso/Congreso/Diputados?_piref73_1333056_73_1333049_1333049.next_page=/wc/menuAbecedarioInicio&tipoBusqueda=completo&idLegislatura=10")
-while true
-  page.links_with(href: /fichaDiputado/).each do |link|
-    puts link.text
-  end
-  next_page_link = page.link_with(text: /Siguiente/)
-  break if next_page_link == nil
-  page = next_page_link.click
-end
+#page = agent.get("http://www.congreso.es/portal/page/portal/Congreso/Congreso/Diputados?_piref73_1333056_73_1333049_1333049.next_page=/wc/menuAbecedarioInicio&tipoBusqueda=completo&idLegislatura=10")
 
+diputados = []
+
+#while true
+#  diputados.concat(page.links_with(href: /fichaDiputado/))
+#  next_page_link = page.link_with(text: /Siguiente/)
+#  break if next_page_link == nil
+#  page = next_page_link.click
+#end
+
+page = agent.get("http://www.congreso.es/portal/page/portal/Congreso/Congreso/Diputados/BusqForm?_piref73_1333155_73_1333154_1333154.next_page=/wc/fichaDiputado?idDiputado=268&idLegislatura=10")
+name = page.search('div.nombre_dip').text
+div = page.search('div#curriculum')
+email = div.search('a[href*=mailto]').text.strip
+
+puts "'#{name}',#{email}"
 
 
 
