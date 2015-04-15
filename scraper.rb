@@ -1,7 +1,7 @@
 # This is a template for a Ruby scraper on Morph (https://morph.io)
 # including some code snippets below that you should find helpful
 
-# require 'scraperwiki'
+require 'scraperwiki'
 # require 'mechanize'
 #
 # agent = Mechanize.new
@@ -22,5 +22,3 @@ ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software 
 # on Morph for Ruby (https://github.com/openaustralia/morph-docker-ruby/blob/master/Gemfile) and all that matters
 # is that your final data is written to an Sqlite database called data.sqlite in the current working directory which
 # has at least a table called data.
-
-puts 'Hola mundo';
